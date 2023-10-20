@@ -151,7 +151,8 @@ module.exports = function (grunt) {
         ieCompat: true,
         strictMath: true,
         sourceMap: true,
-        outputSourceFiles: true
+        outputSourceFiles: true,
+        modifyVars: Object.fromEntries(Object.entries(require('./config.json').vars).map(([key, value]) => [key.replace(/^@/, ''), value]))
       },
       core: {
         options: {
